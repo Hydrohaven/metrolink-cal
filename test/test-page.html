@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Metrolink Schedule Test Page</title>
+  <link rel="stylesheet" href="../content.css">
+  <style>
+    body {
+      background-color: #1a1c1e;
+      color: #e2e8f0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      width: 100%;
+      max-width: 960px;
+    }
+    h2.day-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    /* Mock Metrolink Styles */
+    .stationToStation-card {
+      background-color: #212427;
+      border: 1px solid #33393f;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .stationToStation-card__face {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #33393f;
+      padding-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .stationToStation-card__from, .stationToStation-card__to {
+      display: flex;
+      flex-direction: column;
+    }
+    .stationToStation-card__big-time {
+      font-size: 26px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+    .stationToStation-card__big-time sub {
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .station-name {
+      color: #ffffff;
+      font-size: 16px;
+      text-decoration: underline;
+      margin-top: 4px;
+    }
+    .stationToStation-card__arrow {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+    .stationToStation-card__transfer {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #1e3a5f;
+      color: #60a5fa;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .stationToStation-card__details-btn {
+      background: transparent;
+      border: none;
+      color: #cbd5e1;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Details Area */
+    .stationToStation-card-details {
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+    .stationToStation-card-details__timeline {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .stationToStation-card-details__timeline-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      position: relative;
+    }
+    .stationToStation-card-details__timeline-time {
+      font-size: 14px;
+      font-weight: 700;
+      width: 75px;
+      color: #cbd5e1;
+    }
+    .timeline-bullet {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #016bcb;
+      margin-top: 4px;
+    }
+    .stationToStation-card-details-timeline-location {
+      color: #ffffff;
+      font-size: 15px;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+    .train-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #f59e0b;
+      margin-top: 4px;
+    }
+    .stationToStation__transfer {
+      font-size: 13px;
+      color: #94a3b8;
+      margin-top: 4px;
+    }
+
+    /* Ticket Buttons from Metrolink */
+    .stationToStation-card-details__tickets {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .btn {
+      display: block;
+      width: 125px;
+      padding: .6em 1.5em;
+      font-size: 1rem;
+      box-sizing: content-box;
+      text-decoration: none;
+      text-align: center;
+      border-radius: 4px;
+      font-family: inherit;
+    }
+    .stationToStation-card-details__tickets-btn {
+      padding: .537em 1.44em !important;
+      border: 1px solid #707070;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #ffffff;
+      background: transparent;
+    }
+    .btn--solid {
+      background-color: #016bcb;
+      color: #fff;
+      text-transform: uppercase;
+      border: none;
+      font-weight: 700;
+      padding: .537em 1.44em !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 class="day-title">Saturday</h2>
+
+    <!-- Hidden radio simulation for weekend=3 -->
+    <input type="radio" id="saturday" name="Weekend" value="3" checked style="display:none;">
+
+    <!-- Schedule Card -->
+    <div class="stationToStation-card">
+      <div class="stationToStation-card__face">
+        <div class="stationToStation-card__from">
+          <div class="line-badge" style="color: #f59e0b; font-weight: 700; font-size: 13px;">● OC 1661</div>
+          <div class="stationToStation-card__big-time">9:28 <sub>AM</sub></div>
+          <div class="stationToStation-card__from-station">
+            <a href="#" class="station-name">Tustin</a>
+          </div>
+        </div>
+
+        <div class="stationToStation-card__arrow">
+          <span>——</span>
+          <span class="stationToStation-card__arrow-time">2hr 31m</span>
+          <span>⟶</span>
+        </div>
+
+        <div class="stationToStation-card__to">
+          <div style="font-size: 13px; color: #94a3b8;">Arrives</div>
+          <div class="stationToStation-card__big-time">11:59 <sub>AM</sub></div>
+          <div class="stationToStation-card__to-station">
+            <a href="#" class="station-name">Chatsworth</a>
+          </div>
+        </div>
+
+        <div class="stationToStation-card__transfer">
+          <span class="stationToStation-card__transfer-icon">🔄</span>
+          <span>1 Transfer</span>
+        </div>
+
+        <button class="stationToStation-card__details-btn" type="button">
+          Details <span>▲</span>
+        </button>
+      </div>
+
+      <div class="stationToStation-card-details">
+        <div class="stationToStation-card-details__timeline">
+          <div class="stationToStation-card-details__timeline-item">
+            <div class="stationToStation-card-details__timeline-time">9:28 AM</div>
+            <div class="timeline-bullet"></div>
+            <div class="stationToStation-card-details__timeline-info">
+              <a href="#" class="stationToStation-card-details-timeline-location">Tustin</a>
+              <div class="line-badge" style="color: #f59e0b; font-size: 12px; font-weight: 700;">● OC 1661</div>
+            </div>
+          </div>
+
+          <div class="stationToStation-card-details__timeline-item">
+            <div class="stationToStation-card-details__timeline-time">10:34 AM</div>
+            <div class="timeline-bullet" style="background:#64748b;"></div>
+            <div class="stationToStation-card-details__timeline-info">
+              <a href="#" class="stationToStation-card-details-timeline-location">L.A. Union Station</a>
+              <div class="stationToStation__transfer">⇄ Transfer, 39m</div>
+            </div>
+          </div>
+
+          <div class="stationToStation-card-details__timeline-item">
+            <div class="stationToStation-card-details__timeline-time">11:13 AM</div>
+            <div class="timeline-bullet"></div>
+            <div class="stationToStation-card-details__timeline-info">
+              <a href="#" class="stationToStation-card-details-timeline-location">L.A. Union Station</a>
+              <div class="line-badge" style="color: #f59e0b; font-size: 12px; font-weight: 700;">● A769</div>
+            </div>
+          </div>
+
+          <div class="stationToStation-card-details__timeline-item">
+            <div class="stationToStation-card-details__timeline-time">11:59 AM</div>
+            <div class="timeline-bullet" style="background:#10b981;"></div>
+            <div class="stationToStation-card-details__timeline-info">
+              <a href="#" class="stationToStation-card-details-timeline-location">Chatsworth</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="stationToStation-card-details__tickets">
+          <a href="#" class="btn stationToStation-card-details__tickets-btn">Ticket Types</a>
+          <a href="#" class="btn btn--solid">Where To Buy</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../content.js"></script>
+</body>
+</html>

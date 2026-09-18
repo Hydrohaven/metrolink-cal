@@ -1,0 +1,99 @@
+/* Metrolink to Google Calendar Extension Styles */
+
+/* Column wrapper to keep "Where to Buy" and "Add to Calendar" neatly stacked */
+.metrolink-cal-action-group {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  align-items: stretch !important;
+}
+
+@media only screen and (min-width: 1200px) {
+  .stationToStation-card-details__tickets .metrolink-cal-action-group {
+    margin: 0 9px !important;
+  }
+
+  .stationToStation-card-details__tickets .metrolink-cal-action-group .btn {
+    margin: 0 !important;
+  }
+}
+
+/* Add to Calendar Button - identical to Ticket Types button */
+.metrolink-cal-btn {
+  display: block !important;
+  width: 125px !important;
+  padding: .537em 1.44em !important;
+  margin: 0 !important;
+  box-sizing: content-box !important;
+  border: 1px solid #989d9f !important;
+  background-color: transparent !important;
+  color: inherit !important;
+  font-family: inherit !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  text-transform: uppercase !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  line-height: normal !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  outline: none !important;
+  user-select: none !important;
+  box-shadow: none !important;
+  transition: none !important;
+  /* Instant hover, no transition delay */
+}
+
+/* In dark backgrounds / dark theme, ensure crisp matching border */
+@media (prefers-color-scheme: dark) {
+  .metrolink-cal-btn {
+    border-color: #707070 !important;
+  }
+}
+
+.metrolink-cal-btn:hover,
+.metrolink-cal-btn:focus {
+  background-color: #989d9f !important;
+  color: #ffffff !important;
+  border-color: #989d9f !important;
+  transition: none !important;
+}
+
+.metrolink-cal-btn:active {
+  background-color: #7a7f81 !important;
+  color: #ffffff !important;
+  transition: none !important;
+}
+
+.metrolink-cal-btn:focus-visible {
+  outline: 2px solid #016bcb !important;
+  outline-offset: 2px !important;
+}
+
+/* Tooltip / toast notification for quick feedback */
+.metrolink-cal-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #1e293b;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Barlow", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 999999;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+
+.metrolink-cal-toast.metrolink-cal-toast--visible {
+  opacity: 1;
+  transform: translateY(0);
+}

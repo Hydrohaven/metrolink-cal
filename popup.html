@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Metrolink to Google Calendar</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="popup-header">
+      <div class="header-logo-group">
+        <img src="icons/icon48.png" alt="Metrolink to Google Calendar" class="header-logo" />
+        <div class="header-titles">
+          <h1 class="header-title">Metrolink to Calendar</h1>
+          <span class="header-version">v1.0.0 • Manifest V3</span>
+        </div>
+      </div>
+      <div class="status-badge" id="statusBadge">
+        <span class="status-dot"></span>
+        <span class="status-text">Active</span>
+      </div>
+    </header>
+
+    <!-- Main Card -->
+    <main class="popup-body">
+      <section class="info-card">
+        <h2 class="card-title">How It Works</h2>
+        <ol class="steps-list">
+          <li class="step-item">
+            <span class="step-num">1</span>
+            <div class="step-desc">Go to any <strong>Metrolink Schedule</strong> search result.</div>
+          </li>
+          <li class="step-item">
+            <span class="step-num">2</span>
+            <div class="step-desc">Click <span class="badge-chip">Details</span> to expand any train trip.</div>
+          </li>
+          <li class="step-item">
+            <span class="step-num">3</span>
+            <div class="step-desc">Click the white <span class="badge-chip badge-chip--accent">Add To Calendar</span> button right under "Where to Buy".</div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Key Highlights -->
+      <section class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">⚡</div>
+          <div class="feature-text"><strong>Instant</strong> calendar prefill</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🔒</div>
+          <div class="feature-text"><strong>Private</strong>, zero logins needed</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🔄</div>
+          <div class="feature-text"><strong>Transfers</strong> &amp; stops included</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">⏰</div>
+          <div class="feature-text"><strong>Pacific Time</strong> (PT) accurate</div>
+        </div>
+      </section>
+
+      <!-- Action Button -->
+      <a href="https://metrolinktrains.com/schedules/" target="_blank" rel="noopener noreferrer" class="btn-primary" id="openSchedulesBtn">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+        Open Metrolink Schedules
+      </a>
+    </main>
+
+    <!-- Footer -->
+    <footer class="popup-footer">
+      <span>Ready to schedule your California train trips</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
