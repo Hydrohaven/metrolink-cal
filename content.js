@@ -303,7 +303,7 @@
     calBtn.href = '#';
     calBtn.setAttribute('role', 'button');
     calBtn.className = 'btn stationToStation-card-details__tickets-btn metrolink-cal-btn';
-    calBtn.textContent = 'Add To Calendar';
+    calBtn.textContent = 'Add to Calendar';
 
     // Click handler
     calBtn.addEventListener('click', (e) => {
@@ -330,7 +330,7 @@
 
       // Reset button state after a short delay
       setTimeout(() => {
-        calBtn.textContent = 'Add To Calendar';
+        calBtn.textContent = 'Add to Calendar';
       }, 2500);
     });
 
