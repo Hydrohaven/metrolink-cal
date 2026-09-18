@@ -42,7 +42,5 @@ metrolink-cal/
 │   ├── icon32.png
 │   ├── icon48.png
 │   └── icon128.png
-├── test/                 # Local test harness
-│   └── test-page.html    # Standalone HTML fixture reproducing Metrolink card
 └── README.md             # Documentation & installation guide
 ```
