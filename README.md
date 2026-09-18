@@ -1,4 +1,6 @@
-# Metrolink to Google Calendar Chrome Extension (Manifest V3)
+# Metrolink to Google Calendar Chrome Extension
+
+![alt text](img/metrolink-cal-promo.png)
 
 A lightweight, privacy-focused Chrome Extension that adds an **"Add to Google Calendar"** button to Metrolink schedule cards, allowing you to add train departures, arrivals, stations, and transfer itineraries to your calendar.
 
@@ -27,20 +29,12 @@ TBD, chrome web store link
    - A new tab will open directly to Google Calendar with your event prefilled (title, times, station location, and full itinerary).
    - Click **Save** in Google Calendar to add it to your schedule!
 
-## Project Structure
+## Images
+![alt text](img/metrolink-cal-1.png)
+*Image 1: New "Add to Calendar" button on https://metrolinktrains.com/schedules*
 
-```
-metrolink-cal/
-├── manifest.json         # Chrome Extension Manifest V3 configuration
-├── content.js            # Content script: DOM observer, data parser, & GCal builder
-├── content.css           # Button styling & layout matching Metrolink design
-├── popup.html            # Extension action popup interface
-├── popup.css             # Styling for the popup
-├── popup.js              # Popup tab check and status logic
-├── icons/                # Extension icons (16, 32, 48, 128 px)
-│   ├── icon16.png
-│   ├── icon32.png
-│   ├── icon48.png
-│   └── icon128.png
-└── README.md             # Documentation & installation guide
-```
+![alt text](img/metrolink-cal-2.png)
+*Image 2: New calendar event! With auto-filled train schedule data*
+
+![alt text](img/metrolink-cal-3.png)
+*Image 3: Example of the new event on my calendar*
