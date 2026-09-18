@@ -287,7 +287,7 @@
    * Inject the "Add to Calendar" button directly underneath "Where to Buy"
    */
   function injectCalendarButton(ticketsContainer) {
-    if (!ticketsContainer || ticketsContainer.querySelector('.metrolink-cal-btn')) {
+    if (!ticketsContainer || ticketsContainer.querySelector('.metrolink-cal')) {
       return; // Already injected
     }
 
@@ -302,7 +302,7 @@
     const calBtn = document.createElement('a');
     calBtn.href = '#';
     calBtn.setAttribute('role', 'button');
-    calBtn.className = 'btn stationToStation-card-details__tickets-btn metrolink-cal-btn';
+    calBtn.className = 'btn stationToStation-card-details__tickets-btn metrolink-cal';
     calBtn.textContent = 'Add to Calendar';
 
     // Click handler
