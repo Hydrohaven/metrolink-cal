@@ -9,40 +9,6 @@
 (function () {
   'use strict';
 
-  // SVG Calendar Icon
-  const CALENDAR_ICON_SVG = `
-    <svg class="metrolink-cal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-      <line x1="16" y1="2" x2="16" y2="6"></line>
-      <line x1="8" y1="2" x2="8" y2="6"></line>
-      <line x1="3" y1="10" x2="21" y2="10"></line>
-      <polyline points="9 15 12 18 15 15"></polyline>
-    </svg>
-  `;
-
-  const CHECK_ICON_SVG = `
-    <svg class="metrolink-cal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="20 6 9 17 4 12"></polyline>
-    </svg>
-  `;
-
-  /**
-   * Helper: Show a subtle bottom-right toast message
-   */
-  function showToast(message) {
-    let toast = document.querySelector('.metrolink-cal-toast');
-    if (!toast) {
-      toast = document.createElement('div');
-      toast.className = 'metrolink-cal-toast';
-      document.body.appendChild(toast);
-    }
-    toast.innerHTML = `${CALENDAR_ICON_SVG}<span>${message}</span>`;
-    toast.classList.add('metrolink-cal-toast--visible');
-    clearTimeout(toast._timeout);
-    toast._timeout = setTimeout(() => {
-      toast.classList.remove('metrolink-cal-toast--visible');
-    }, 3500);
-  }
 
   /**
    * Determine the target schedule day (Saturday, Sunday, or Weekday)
@@ -336,7 +302,7 @@
     const calBtn = document.createElement('a');
     calBtn.href = '#';
     calBtn.setAttribute('role', 'button');
-    calBtn.className = 'btn stationToStation-card-details__tickets-btn';
+    calBtn.className = 'btn stationToStation-card-details__tickets-btn metrolink-cal-btn';
     calBtn.textContent = 'Add To Calendar';
 
     // Click handler
@@ -346,21 +312,18 @@
 
       const tripData = extractTripData(card);
       if (!tripData) {
-        showToast('Unable to extract trip details.');
+        console.error('[Metrolink Cal] Unable to extract trip details.');
         return;
       }
 
       const gcalUrl = buildGoogleCalendarUrl(tripData);
       if (!gcalUrl) {
-        showToast('Failed to create calendar event link.');
+        console.error('[Metrolink Cal] Failed to create calendar event link.');
         return;
       }
 
       // Visual feedback on button
       calBtn.textContent = 'Opening...';
-
-      // Toast notification
-      showToast(`Opening Google Calendar: ${tripData.originStation} >> ${tripData.destStation}`);
 
       // Open Google Calendar in new tab
       window.open(gcalUrl, '_blank', 'noopener,noreferrer');
