@@ -4,17 +4,9 @@
 
 A lightweight, privacy-focused Chrome Extension that adds an **"Add to Google Calendar"** button to Metrolink schedule cards, allowing you to add train departures, arrivals, stations, and transfer itineraries to your calendar.
 
-## Features
-
-- **Direct Placement**: Injected directly underneath the **"Where to Buy"** button inside the expanded "Details" drawer of any schedule card.
-- **Zero OAuth / 100% Private**: Uses Google Calendar's event template URL format (`calendar.google.com/calendar/render?action=TEMPLATE...`), which requires **no Google account access, no OAuth tokens, no API keys, and no personal data collection**.
-- **Accurate Scheduling & Timezones**: Automatically resolves the departure and arrival times and sets the calendar timezone to Pacific Time (`America/Los_Angeles`).
-- **Rich Multi-Leg Itineraries**: Includes departure station, arrival station, intermediate stops, transfer durations (e.g. 39m at L.A. Union Station), train numbers (`OC 1661`, `A769`), and a direct link back to the schedule in the event description.
-- **Minimal Permissions**: Uses the latest Chrome Extension **Manifest V3** with zero background bloat and only the specific host permission for `metrolinktrains.com`.
-
 ## How to Use 
 
-TBD, chrome web store link
+Download it on Chrome Web Store [here](https://chromewebstore.google.com/detail/metrolink-to-google-calen/apelihefpnlkgengkcmmadhfmebejojp)!
 
 ## How to Test on Metrolink
 
